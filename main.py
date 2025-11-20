@@ -14,7 +14,7 @@ class Suprematism(QWidget):
         self.pushButton.clicked.connect(self.run)
         self.do_paint = False
         self.x, self.y = -100, -100
-        self.fig = 3
+        self.fig = 0
         self.setMouseTracking(True)
 
     def paintEvent(self, event):
@@ -30,8 +30,8 @@ class Suprematism(QWidget):
         self.update()
 
     def draw_flag(self, qp):
-        self.x, self.y = randint(0, 300), randint(0, 300)
         size = randint(20, 100)
+        self.x, self.y = randint(0, 400 - size), randint(0, 300 - size)
         color = QColor(randint(0, 255), randint(0, 255), randint(0, 255))
         qp.setBrush(color)
         if self.fig == 0:
