@@ -11,6 +11,7 @@ class Suprematism(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('Ui.ui', self)
+        self.pushButton.clicked.connect(self.run)
         self.do_paint = False
         self.x, self.y = -100, -100
         self.fig = 3
